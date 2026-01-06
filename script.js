@@ -1,3 +1,4 @@
+// Red Bull smaken
 const redBulls = [
   { id:"original", name:"Red Bull Original", image:"images/redbull-classic.png", color:"from-red-200 to-red-400" },
   { id:"sugarfree", name:"Red Bull Sugarfree", image:"images/redbull-sugarfree.png", color:"from-gray-200 to-gray-400" },
@@ -10,9 +11,29 @@ const redBulls = [
   { id:"wildberries", name:"Red Bull Wild Berries", image:"images/redbull-pink.png", color:"from-pink-300 to-pink-500" },
   { id:"apricot", name:"Red Bull Apricot & Strawberry", image:"images/redbull-apricot.png", color:"from-orange-200 to-orange-400" },
   { id:"winterapple", name:"Red Bull Apple & Ginger", image:"images/redbull-winter-edition.png", color:"from-red-200 to-red-400" },
-  { id:"witte-perzik", name:"Red Bull Witte perzik", image:"images/redbull-witteperzik.png", color:"from-pink-200 to-yellow-200" },
-{ id:"cactusvrucht", name:"Red Bull Cactusvrucht", image:"images/redbull-cactusvrucht.png", color:"from-orange-300 to-pink-300" },
-{ id:"kokos-blauwe-bosbes", name:"Red Bull Kokos-Blauwe bosbes", image:"images/redbull-kokos.png", color:"from-blue-200 to-purple-300" }
+  { id:"witte-perzik", name:"Red Bull Witte Perzik", image:"images/redbull-witteperzik.png", color:"from-pink-200 to-yellow-200" },
+  { id:"cactusvrucht", name:"Red Bull Cactusvrucht", image:"images/redbull-cactusvrucht.png", color:"from-orange-300 to-pink-300" },
+  { id:"kokos-blauwe-bosbes", name:"Red Bull Kokos-Blauwe Bosbes", image:"images/redbull-kokos.png", color:"from-blue-200 to-purple-300" }
+];
+
+// Monster smaken
+const monsters = [
+  { id:"monster-original", name:"Monster Original Green", image:"images/monster-original.png", color:"from-green-400 to-green-600" },
+  { id:"monster-zero-sugar", name:"Monster Zero Sugar", image:"images/monster-zero.png", color:"from-gray-400 to-gray-600" },
+  { id:"monster-full-throttle-zero", name:"Monster Full Throttle Zero Sugar", image:"images/monster-full-throttle-zero.png", color:"from-gray-300 to-gray-500" },
+  { id:"monster-lando-norris-zero", name:"Monster Lando Norris Zero Sugar", image:"images/monster-lando-norris-zero.png", color:"from-gray-200 to-gray-400" },
+  { id:"monster-vr46-zero", name:"Monster VR46 Zero Sugar", image:"images/monster-vr46-zero.png", color:"from-gray-300 to-gray-500" },
+  { id:"monster-ultra-white", name:"Monster Ultra White", image:"images/monster-ultra-white.png", color:"from-white to-gray-200" },
+  { id:"monster-ultra-strawberry-dreams", name:"Monster Ultra Strawberry Dreams", image:"images/monster-ultra-strawberry-dreams.png", color:"from-pink-300 to-pink-500" },
+  { id:"monster-ultra-peachy-keen", name:"Monster Ultra Peachy Keen", image:"images/monster-ultra-peachy-keen.png", color:"from-yellow-300 to-orange-400" },
+  { id:"monster-ultra-gold", name:"Monster Ultra Gold", image:"images/monster-ultra-gold.png", color:"from-yellow-400 to-yellow-600" },
+  { id:"monster-ultra-fiesta", name:"Monster Ultra Fiesta", image:"images/monster-ultra-fiesta.png", color:"from-orange-300 to-red-400" },
+  { id:"monster-ultra-rosa", name:"Monster Ultra Rosá", image:"images/monster-ultra-rosa.png", color:"from-pink-300 to-pink-500" },
+  { id:"monster-pacific-punch", name:"Monster Pacific Punch", image:"images/monster-pacific-punch.png", color:"from-red-300 to-yellow-400" },
+  { id:"monster-mango-loco", name:"Monster Mango Loco", image:"images/monster-mango-loco.png", color:"from-yellow-300 to-orange-400" },
+  { id:"monster-monarch", name:"Monster Monarch", image:"images/monster-monarch.png", color:"from-purple-300 to-purple-500" },
+  { id:"monster-bad-apple", name:"Monster Bad Apple", image:"images/monster-bad-apple.png", color:"from-red-300 to-red-500" },
+  { id:"monster-rio-punch", name:"Monster Rio Punch", image:"images/monster-rio-punch.png", color:"from-pink-300 to-red-400" }
 ];
 
 const datePicker = document.getElementById("datePicker");
@@ -28,32 +49,37 @@ datePicker.addEventListener("change", ()=> loadDrinks(datePicker.value));
 
 function loadDrinks(date){
   drinksDiv.innerHTML = "";
-  redBulls.forEach(rb=>{
-    const count = getCount(date, rb.id);
+
+  // Combineer Red Bull en Monster
+  const allDrinks = [...redBulls, ...monsters];
+
+  allDrinks.forEach(item => {
+    const count = getCount(date, item.id);
     const card = document.createElement("div");
 
     card.className = `
       flex items-center justify-between p-4 rounded-3xl shadow-xl
-      hover:scale-105 transform transition duration-300 bg-gradient-to-r ${rb.color} min-h-[100px]
+      hover:scale-105 transform transition duration-300 bg-gradient-to-r ${item.color} min-h-[100px]
     `;
 
     card.innerHTML = `
       <div class="flex items-center flex-1 gap-4">
-        <img src="${rb.image}" class="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-lg bg-gray-100 p-1 shadow-md">
-        <p class="font-semibold text-gray-800 text-sm sm:text-base">${rb.name}</p>
+        <img src="${item.image}" class="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-lg bg-gray-100 p-1 shadow-md">
+        <p class="font-semibold text-gray-800 text-sm sm:text-base">${item.name}</p>
       </div>
 
       <div class="flex items-center gap-2">
         <button class="w-10 h-10 rounded-full bg-red-600 text-white hover:bg-red-700 active:scale-95 transition-transform"
-          onclick="changeCount('${date}','${rb.id}',-1)">-</button>
-        <span class="w-10 text-center font-bold text-lg sm:text-xl" id="${date}-${rb.id}">${count}</span>
+          onclick="changeCount('${date}','${item.id}',-1)">-</button>
+        <span class="w-10 text-center font-bold text-lg sm:text-xl" id="${date}-${item.id}">${count}</span>
         <button class="w-10 h-10 rounded-full bg-red-600 text-white hover:bg-red-700 active:scale-95 transition-transform"
-          onclick="changeCount('${date}','${rb.id}',1)">+</button>
+          onclick="changeCount('${date}','${item.id}',1)">+</button>
       </div>
     `;
 
     drinksDiv.appendChild(card);
   });
+
   updateTotal(date);
 }
 
