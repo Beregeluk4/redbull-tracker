@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Red Bull Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen font-sans bg-gradient-to-br from-red-100 via-yellow-50 to-pink-100">
+
+  <!-- Header -->
+  <header class="text-center py-6">
+    <h1 class="text-4xl sm:text-5xl font-extrabold text-red-600 drop-shadow-lg">🥤 Red Bull Tracker</h1>
+  </header>
+
+  <!-- Main content -->
+  <main class="max-w-5xl mx-auto px-4 mt-6">
+
+    <!-- Datumkiezer -->
+    <div class="text-center mb-6">
+      <input type="date" id="datePicker" class="border border-gray-300 rounded-lg p-2 w-48 text-center shadow-md">
+    </div>
+
+    <!-- Totaal -->
+    <div class="mb-6 flex flex-col items-center">
+      <span id="total" class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-3 drop-shadow-sm">Totaal: 0</span>
+    </div>
+
+    <!-- Maand Recap knop -->
+    <div class="flex justify-center mb-8">
+      <a href="maandrecap.html" 
+         class="flex items-center gap-2 px-6 py-3 bg-red-600 text-white font-semibold rounded-2xl shadow-lg hover:bg-red-700 transform hover:scale-105 transition">
+        📊 Maand Recap
+      </a>
+    </div>
+
+    <!-- Kaarten grid -->
+    <div id="drinks" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"></div>
+
+  </main>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+
+</body>
+</html>

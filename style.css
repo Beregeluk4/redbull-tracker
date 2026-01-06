@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#datePicker {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#drinks {
+    max-width: 420px;
+    margin: auto;
+}
+
+.drink {
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.drink img {
+    width: 55px;
+    margin-right: 15px;
+}
+
+.controls {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.controls button {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+}
+
+.count {
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+}
