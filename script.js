@@ -10,6 +10,9 @@ const redBulls = [
   { id:"wildberries", name:"Red Bull Wild Berries", image:"images/redbull-pink.png", color:"from-pink-300 to-pink-500" },
   { id:"apricot", name:"Red Bull Apricot & Strawberry", image:"images/redbull-apricot.png", color:"from-orange-200 to-orange-400" },
   { id:"winterapple", name:"Red Bull Apple & Ginger", image:"images/redbull-winter-edition.png", color:"from-red-200 to-red-400" },
+  { id:"witte-perzik", name:"Red Bull Witte perzik", image:"images/redbull-witteperzik.png", color:"from-pink-200 to-yellow-200" },
+{ id:"cactusvrucht", name:"Red Bull Cactusvrucht", image:"images/redbull-cactusvrucht.png", color:"from-orange-300 to-pink-300" },
+{ id:"kokos-blauwe-bosbes", name:"Red Bull Kokos-Blauwe bosbes", image:"images/redbull-kokos.png", color:"from-blue-200 to-purple-300" }
 ];
 
 const datePicker = document.getElementById("datePicker");

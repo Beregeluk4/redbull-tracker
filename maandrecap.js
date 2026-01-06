@@ -10,7 +10,10 @@ const redBulls = [
     { id: "tropical", name: "Red Bull Tropical", color: ["#FACC15","#B45309"] },
     { id: "wildberries", name: "Red Bull Wild Berries", color: ["#F472B6","#9D174D"] },
     { id: "apricot", name: "Red Bull Apricot & Strawberry", color: ["#FDBA74","#C2410C"] },
-    { id: "winterapple", name: "Red Bull Apple & Ginger", color: ["#F87171","#B91C1C"] }
+    { id: "winterapple", name: "Red Bull Apple & Ginger", color: ["#F87171","#B91C1C"] },
+    { id: "witte-perzik", name: "Red Bull Witte Perzik", color: ["#FBCFE8","#FDE68A"] }, 
+    { id: "cactusvrucht", name: "Red Bull Cactusvrucht", color: ["#FB923C","#F472B6"] }, 
+    { id: "kokos-blauwe-bosbes", name: "Red Bull Kokos-Blauwe Bosbes", color: ["#60A5FA","#A78BFA"] } 
 ];
 
 const monthPicker = document.getElementById("monthPicker");
